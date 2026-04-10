@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "plan": "plan-1",
+        "nombre": "ENTRENAMIENTO PERSONALIZADO",
+        "descripcion": "Se adapta a las necesidades individuales considerando objetivos, nivel físico, tiempo disponible y salud general. Se diseña fijando objetivos claros, con ejercicios específicos determinando la frecuencia e intensidad adecuada y planificando un progreso gradual para optimizar resultados.",
+        "imagen": "./recursos/imagenes/entrenamiento-personalizado.jpg",
+        "alt": "Imagen del plan"
+    },
+    {
+        "id": 2,
+        "plan": "plan-2",
+        "nombre": "PREPARACIÓN FÍSICA DEPORTIVA",
+        "descripcion": "Es un proceso pedagógico que busca mejorar el rendimiento de un atleta mediante el desarrollo de sus capacidades físicas y psicológicas a través de ejercicios y actividades estructuradas. Se adapta a las necesidades específicas de cada deporte para optimizar el potencial del deportista y prevenir lesiones.",
+        "imagen": "./recursos/imagenes/entrenamiento_fisico.webp",
+        "alt": "Imagen del plan"
+    },
+    {
+        "id": 3,
+        "plan": "plan-3",
+        "nombre": "CLASE GRUPAL CROSS TRAINING",
+        "descripcion": "Nuestras clases combinan ejercicios básicos de fuerza, derivados del levantamiento olímpico, cardiovasculares y derivados de la gimnasia para mejorar la condición física general. Una clase típica dura alrededor de una hora e incluye: entrada en calor, una fase de fuerza o técnica, el workout of the day (WOD) y una vuelta a la calma.",
+        "imagen": "./recursos/imagenes/entrenamiento_crossfit.jpg",
+        "alt": "Imagen del plan"
+    },
+    {
+        "id": 4,
+        "plan": "plan-4",
+        "nombre": "ENTRENAMIENTO FUNCIONAL",
+        "descripcion": "Se centra en movimientos que preparan el cuerpo para actividades diarias, mejorando fuerza, equilibrio y agilidad. Estás clases suelen durar alrededor de 45 minutos e incluyen una entrada en calor, ejercicios con el propio peso corporal, el uso de implementos como mancuernas o bandas elásticas y una rutina final de estiramientos.",
+        "imagen": "./recursos/imagenes/entrenamiento_funcional.jpg",
+        "alt": "Imagen del plan"
+    },
+    {
+        "id": 5,
+        "plan": "plan-5",
+        "nombre": "ENTRENAMIENTO ADULTOS MAYORES",
+        "descripcion": "El entrenamiento para adultos mayores incluye ejercicios de fortalecimiento muscular, de carácter aeróbico y equilibrio para mejorar la salud física y mental. La clave es mantenerse activos, estimular y fortalecer los vínculos afectivos, buscando la variedad y progresión gradual.",
+        "imagen": "./recursos/imagenes/entrenamiento_mayores.webp",
+        "alt": "Imagen del plan"
+    },
+    {
+        "id": 6,
+        "plan": "plan-6",
+        "nombre": "EDUCACIÓN FÍSICA INFANTIL",
+        "descripcion": "Se enfoca en el desarrollo integral de los niños mediante ejercicios seguros y adaptados a su edad. Es crucial para mejorar la coordinación, la fuerza, la salud ósea y muscular, así como habilidades sociales y emocionales.",
+        "imagen": "./recursos/imagenes/entrenamiento_niños.jpg",
+        "alt": "Imagen del plan"
+    }
+]

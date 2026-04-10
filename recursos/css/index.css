@@ -14,30 +14,35 @@
 }
 
 *{
-    font-family: "gym-font";
-    margin:0%;
-    padding:0%;
-    box-sizing: border-box;
+  font-family: "gym-font";
+  margin:0%;
+  padding:0%;
+  box-sizing: border-box;
 }
 
-html{
+:root{
+  font-family: "gym-font";
   height:100%;
-  flex-direction: column;
 }
 
 body{
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: black;
 }
 
 h1, h2, h3, h4{
   font-family: "titulos";
-  font-size: 35px;
+  font-size: 24px;
 }
 
 p{
   font-family:"textos";
+}
+
+a{
+  color:#1b62b3;
 }
 
 /*Cabecera principal*/
@@ -49,26 +54,68 @@ p{
   width:100%;
   z-index: 1000;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   background-color: black;
-  height: 100px;
-  font-size: 20px;
+  height: 60px;
+  font-size: 16px;
 }
 
 .cabecera-principal img {
-  height: 100px;
+  height: 50px;
   width:auto;
-  left:100px;
-  margin-right: 35px;
+  margin-right: 10px;
 }
 
 .cabecera-principal nav{
-  display: flex;
+  display: none; 
   align-items: center;
-  border-left: 1px solid #333333;
-  border-right: 1px solid #333333;
-  padding-left: 35px;
-  padding-right: 35px;
+  border-left: none;
+  border-right: none;
+  padding-left: 0;
+  padding-right: 15px;
+}
+
+.menu-hamburguesa {
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001; 
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-around;
+    height: 30px; 
+    width: 30px;
+    margin-right: 15px; 
+}
+
+.linea-hamburguesa {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: yellow;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+.cabecera-principal.menu-abierto nav {
+    display: flex; 
+    flex-direction: column; 
+    position: absolute; 
+    top: 60px; 
+    left: 0;
+    width: 100%;
+    background-color: #1a1a1a; 
+    padding: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.cabecera-principal.menu-abierto ul {
+    flex-direction: column; 
+    text-align: center;
+}
+
+.cabecera-principal.menu-abierto ul a {
+    padding: 10px 0;
 }
 
 .cabecera-principal ul {
@@ -92,53 +139,65 @@ p{
 }
 
 .cabecera-principal ul li a{
-    text-decoration: none;
-    display: block;
-    color: yellow;
-    text-align: center;
-    padding: 14px 16px;
+  text-decoration: none;
+  display: block;
+  color: yellow;
+  text-align: center;
+  padding: 8px 10px;
+}
+
+.menu-abierto .linea-hamburguesa:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-abierto .linea-hamburguesa:nth-child(1) {
+    transform: translateY(10px) rotate(45deg); 
+}
+
+.menu-abierto .linea-hamburguesa:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
 }
 
 .pie-principal {
-    display: flex;
-    flex-direction: column; 
-    align-items: center; 
-    height: auto; 
-    padding: 15px 0; 
-    background-color: black;
-    font-size: 30px;
-    color:white;
-    border-top:#3e3e3e solid 1px;
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  height: auto; 
+  padding: 15px 0; 
+  background-color: black;
+  font-size: 18px;
+  color:white;
+  border-top:#3e3e3e solid 1px;
 }
 
 .pie-principal address {
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    width: 100%; 
-    font-family: "textos";
-    font-style: normal;
-    font-size:10px;
-    font-weight: 100;
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  width: 100%; 
+  font-family: "textos";
+  font-style: normal;
+  font-size:12px;
+  font-weight: 100;
 }
 
 .pie-principal ul {
-    display: flex; 
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  display: flex; 
+  list-style-type: none; 
+  margin: 0;
+  padding: 0;
 }
 
 .pie-principal ul li {
-    margin: 0 10px; 
+  margin: 0 8px; 
 }
 
 .pie-principal p {
-    width: 100%;
-    text-align: center;
-    font-size: 20px;
-    margin-top: 5px; 
-    color: white; 
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 5px; 
+  color: white; 
 }
 
 /*index - Principio*/
@@ -150,49 +209,44 @@ p{
 
 .contenido-principal .principal div {
   position: relative;
-  min-height:100vh;
+  min-height: 50vh; 
 }
 
 .contenido-principal .principal img {
   display: block; 
   width: 100%;
-  height: 100vh;
+  height: 50vh;
+  object-fit: cover;
 }
 
-.contenido-principal .principal p {
-    position: absolute;
-    font-family: "gym-font";
-    left: 50%;
-    transform: translateX(-50%); 
-    top: 35%;
-    font-size: 50px; 
-    color: yellow;
-    margin: 0;
-    top: 35%;
-}
-
-.contenido-principal .principal button {
+.contenido-principal .principal .contenido-superpuesto {
     position: absolute; 
     left: 50%;
-    transform: translateX(-50%); 
     top: 50%; 
-    font-size:50px;
-    background-color: yellow;
-    color: black;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-    padding: 10px;
+    transform: translate(-50%, -50%); 
+    
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    
+    width: 90%; 
+    max-width: 400px; 
 }
 
+.contenido-principal .principal .contenido-superpuesto p {
+    font-size: 30px;
+    font-family: "gym-font"; 
+    margin-bottom: 15px; 
+    text-align: center;
+    color: yellow;
+}
+
+/* 3. Estilo del Botón */
 .contenido-principal .principal button {
-  top: 50%;
-  background-color: yellow;
-  color: black;
-  border: none; 
-  cursor: pointer; 
-  transition: background-color 0.3s, color 0.3s; 
-  padding: 10px;
+    font-size: 20px;
+    color:black;
+    background-color: yellow; 
+    padding: 10px 20px;
 }
 
 .contenido-principal .principal button:hover {
@@ -203,63 +257,64 @@ p{
 /*Sobre Nosotros*/
 
 .contenido-principal .sobre-nosotros {
-    display: flex; 
-    justify-content: center; 
-    align-items: center;
-    padding-top: 84px;
-    padding-bottom: 64px;
-    background-color: black;
-    color: white;
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: black;
+  color: white;
 }
 
 .contenido-principal .sobre-nosotros .sn-article {
-    display: flex; 
-    align-items: center; 
-    max-width: 1300px; 
-    width: 90%; 
-    margin: 0 auto;
-    padding: 0; 
-    background-color: transparent; 
-    border: none; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: flex-start; 
+  width: 90%; 
+  margin: 0 auto;
+  padding: 0; 
+  background-color: transparent; 
+  border: none; 
 }
 
 .contenido-principal .sobre-nosotros img{
-  height:25%;
+  height:auto;
 }
 
 .contenido-principal .sobre-nosotros .sn-article h1{
   font-family: "titulos";
   font-weight: 100;
-  font-size: 35px;
+  font-size: 24px;
 }
 
-
-/* 3. BLOQUE DE TEXTO (A la izquierda) */
 .contenido-principal .sobre-nosotros .sn-article .sn-texto {
-    flex: 1; 
-    padding-right: 40px; 
-    order: 1; 
+  flex: 1; 
+  padding-right: 0; 
+  order: 1; 
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .contenido-principal .sobre-nosotros .sn-article h1 {
-    font-size: 40px;
-    font-family: "titulos";
-    color: yellow;
-    padding-bottom: 20px;
+  font-size: 30px;
+  font-family: "titulos";
+  color: yellow;
+  padding-bottom: 0;
 }
 
 .contenido-principal .sobre-nosotros .sn-article p {
-    font-size: 25px;
-    font-weight: 300;
+  font-size: 16px;
+  font-weight: 300;
 }
 
 .contenido-principal .sobre-nosotros .sn-article img {
-    width: 50%; 
-    height: 50%; 
-    order: 2; 
+  width: 100%; 
+  height: auto;
+  order: 2; 
+  margin-top: 20px;
 }
-
-
 
 /*Preview entrenamientos*/
 
@@ -267,10 +322,10 @@ p{
   display: flex;
   align-items: stretch;
   justify-content: space-around;
-  height: 100%;
-  gap: 50px;
-  padding: 0 20%;
-  padding-bottom:64px;
+  height: auto;
+  gap: 20px;
+  padding: 0 5%; 
+  padding-bottom: 40px;
   padding-top: 20px;
   margin: 0 auto;
   flex-wrap: wrap;
@@ -279,55 +334,55 @@ p{
 
 .contenido-principal .entrenamientos-preview .titulo-entrenamientos{
   width: 100%;
-  padding: 25px;
-  padding-top: 5px;
-  padding-bottom: 5px; 
+  padding: 15px;
   display: flex;
   justify-content: space-between; 
   align-items: center;
-  font-size: 25px;
-  font-size: "titulos";
+  font-size: 18px;
+  font-family: "titulos";
 }
 
 .contenido-principal .entrenamientos-preview .boton-enlace{
   font-family: "titulos";
-  font-size: 35px;
+  font-size: 20px;
   font-weight: 100;
 }
 
 .contenido-principal .entrenamientos-preview .entrenamiento-contenedor {
   display: flex;
   flex-direction: column;
-  flex: 1;
-  padding: 20px;
+  flex: 100%; 
+  padding: 15px;
   box-sizing: border-box;
   transition: transform 0.3s ease-in-out;
   border-style: solid;
   border-color: #333;
   border-width: 1px;
-  font-size: 22px;
+  font-size: 16px;
+  margin-bottom: 10px;
 }
 
 .contenido-principal .entrenamientos-preview .entrenamiento-contenedor:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
-  transition: box-shadow 0.1s ease-in-out;  
+  transition: box-shadow 0.1s ease-in-out;
 }
 
 .contenido-principal .entrenamientos-preview .entrenamiento-contenedor .boton-enlace{
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .contenido-principal .entrenamientos-preview article h2 {
-  font-size: 35px;
+  font-size: 24px;
   color:yellow;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   font-weight: 100;
 }
 
 .contenido-principal .entrenamientos-preview article img {
-  height: 200px;
+  height: 150px;
   width: 100%;
+  object-fit: cover;
 }
 
 .contenido-principal .entrenamientos-preview article p {
@@ -341,17 +396,17 @@ p{
   font-weight: bold;
   border-radius: 5px;
   align-self: flex-start;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   display: inline-flex;
   align-items: center;
 }
 
 .contenido-principal .entrenamientos-preview article .boton-enlace img {
-    height: 1.2em; 
-    width: auto;
-    margin-left: 8px; 
-    transition: transform 0.3s ease-in-out;
+  height: 1em; 
+  width: auto;
+  margin-left: 5px; 
+  transition: transform 0.3s ease-in-out;
 }
 
 .contenido-principal .entrenamientos-preview article .boton-enlace:hover img{
@@ -361,134 +416,137 @@ p{
 /*Equipo de profes*/
 
 .contenido-principal .equipo-de-profes {
-    background-color: black;
-    padding-top: 20px;
-    padding-bottom: 40px; 
+  background-color: black;
+  padding-top: 20px;
+  padding-bottom: 20px; 
 }
 
 .contenido-principal .equipo-de-profes h2 {
-    text-align: center;
-    font-size: 35px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    color: yellow;
+  text-align: center;
+  font-size: 24px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: yellow;
 }
 
 .contenido-principal .equipo-de-profes .contenedor-profesores {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start; 
-    padding: 20px 20%; 
-    gap: 30px; 
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  padding: 15px 5%; 
+  gap: 20px; 
 }
 
+
 .contenido-principal .equipo-de-profes .contenedor-profesores .profesor {
-    display: flex;
-    flex-direction: column;
-    flex: 1; 
-    text-align: center;
-    align-items: center; 
-    padding: 20px;
-    box-sizing: border-box;
-    color: white; 
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  padding: 15px;
+  box-sizing: border-box;
+  color: white;
+  width: 80%; 
 }
 
 .contenido-principal .equipo-de-profes .contenedor-profesores .profesor img {
-    height: 150px; 
-    width: 150px;
-    border-radius: 50%; 
-    object-fit: cover; 
-    margin-bottom: 15px;
+  height: 120px; 
+  width: 120px;
+  border-radius: 50%; 
+  object-fit: cover; 
+  margin-bottom: 10px;
 }
 
 .contenido-principal .equipo-de-profes .contenedor-profesores .profesor h2 {
-    font-size: 28px; 
-    color: yellow;
-    padding: 10px 0;
+  font-size: 20px; 
+  color: yellow;
+  padding: 5px 0;
 }
 
 .contenido-principal .equipo-de-profes .contenedor-profesores .profesor p {
-    font-size: 16px;
-    text-align: center;
-    color: #ccc;
+  font-size: 14px;
+  text-align: center;
+  color: #ccc;
 }
 
 /*Testimonios*/
 
-.contenido-principal .testimonios .cuadros-testimonios {
-    display: flex;
-    justify-content: space-around;
-    align-items: stretch; 
-    gap: 50px; 
-    padding: 20px 20%; 
-    background-color: black;
-    padding-bottom:50px;
+.contenido-principal .testimonios .cuadro-testimonio {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  gap: 15px; 
+  padding: 15px 5%; 
+  background-color: black;
+  padding-bottom: 30px;
 }
 
-.contenido-principal .testimonios .cuadros-testimonios p {
-    display: flex;
-    flex-direction: column;
-    flex: 1; 
-    padding: 20px;
-    box-sizing: border-box; 
-    color:white;
-    border-style: solid;
-    border-color: white;
-    border-width: 1px;
+.contenido-principal .testimonios .cuadro-testimonio p {
+  display: flex;
+  flex-direction: column;
+  flex: 1; 
+  padding: 15px;
+  box-sizing: border-box; 
+  color:white;
+  border-style: solid;
+  border-color: white;
+  border-width: 1px;
+  width: 90%; 
 }
 
 .contenido-principal .testimonios h4 {
-    text-align: center; 
-    font-size: 35px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background-color: black;
-    color:yellow;
+  text-align: center; 
+  font-size: 24px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: black;
+  color:yellow;
 }
 
 /*Contenedores - entrenamientos.html*/
 
 .contenido-principal .planes {
-    display: flex; 
-    flex-direction: column; 
-    gap: 30px; 
-    padding: 30px 5%;
-    max-width: 50%; 
-    margin: 0 auto;
-    background-color: black;
+  display: flex; 
+  flex-direction: column; 
+  gap: 20px; 
+  padding: 20px 5%;
+  max-width: 100%; 
+  margin: 0 auto;
+  background-color: black;
 }
 
 .contenido-principal .planes article {
-    display: flex; 
-    align-items: flex-start; 
-    padding: 30px; 
-    background-color: rgba(255, 255, 255, 0.5); 
-    box-sizing: border-box; 
-    transition: transform 0.3s ease-in-out;
-    border-bottom: 1px solid #333333;
-    background-color: black;
-    color:white;
+  display: flex; 
+  flex-direction: column; 
+  align-items: flex-start; 
+  padding: 15px; 
+  background-color: rgba(255, 255, 255, 0.5); 
+  box-sizing: border-box; 
+  transition: transform 0.3s ease-in-out;
+  border-bottom: 1px solid #333333;
+  background-color: black;
+  color:white;
 }
 
 .contenido-principal .planes article img {
-    width: 200px; 
-    height: 150px;
-    margin-right: 30px; 
-    flex-shrink: 0; 
+  width: 100%; 
+  height: 150px;
+  margin-right: 0; 
+  flex-shrink: 0; 
+  margin-bottom: 15px;
 }
 
 .contenido-principal .planes article .texto-plan {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 .contenido-principal .planes article .texto-plan h1 {
-    font-size: 35px;
-    margin-top: 0; 
-    color:yellow;
+  font-size: 24px;
+  margin-top: 0; 
+  color:yellow;
 }
 
 .contenido-principal .planes article .texto-plan p {
-    font-size: 20px;
+  font-size: 16px;
 }
 
 .contenido-principal .cronograma{
@@ -501,24 +559,32 @@ p{
 }
 
 .contenido-principal .cronograma img{
-  height: 70%;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
+  height: auto;
+  width: 90%; 
+  padding: 15px;
+}
+
+.contenido-principal .cronograma p{
+  font-size:12px;
+  color:white;
 }
 
 /*Inscripcion*/
 
-.contenido-principal .inscripcion .formulario-inscripcion{
+.contenido-principal .inscripcion {
   display: flex;
   flex-direction: column;
-  gap:20px;
-  max-width: 600px;
-  margin: 0 auto;
+  gap:15px;
+  max-width: 90%;
+  margin: 20px auto;
   padding:20px;
   color:white;
   font-weight: 100;
-  font-size: 25px;
+  font-size: 18px;
+  border-style: solid;
+  border-color: #333;
+  border-width: 1px;
+  border-radius: 12px;
 }
 
 .contenido-principal .inscripcion label {
@@ -526,30 +592,452 @@ p{
   flex-direction: column; 
   width: 100%; 
   text-align: left; 
-  font-size: 18px;
+  font-size: 16px;
   padding-top:10px;
 }
 
 .contenido-principal .inscripcion input {
   width: 100%; 
   padding: 10px;
-  margin-top: 5px; /* Pequeño espacio entre el texto del label y el input */
+  margin-top: 5px; 
   border: 1px solid #555;
   border-radius: 4px;
-  
+  margin-bottom: 0;
   background-color: #3e3e3e;
   color: white;
-  
 }
 
-/* 4. Estilo para el Botón (Asegura que esté centrado) */
 .contenido-principal .inscripcion button[type="submit"] {
-  margin-top: 25px;
-  padding: 12px 20px;
+  margin-top: 15px;
+  padding: 10px 15px;
+  width:100%;
   background-color: yellow;
   color: black;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.contenido-principal .inscripcion button[type="submit"]:hover {
+  background-color: black;
+  color: yellow;
+}
+
+/*Contacto*/
+
+.contenido-pagina-contacto{
+  max-width: 90%;
+  width: 90%;
+  margin: 20px auto; 
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column; 
+  gap: 20px;
+  color:white;
+  font-family: "textos";
+}
+
+.contacto-cuadro-superior {
+  display: flex;
+  flex-direction: column; 
+  gap: 20px;
+  align-items: center; 
+}
+
+.columna-izquierda {
+  flex: 1; 
+  display: flex;
+  flex-direction: column; 
+  gap: 20px;
+}
+
+.contacto-texto h1 {
+  font-size: 18px;
+  color: yellow; 
+  margin-bottom: 5px;
+}
+.contacto-texto h2 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.contacto-texto p {
+  font-size: 16px;
+}
+
+.contacto-datos h3,
+.columna-derecha h3 {
   font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.contacto-datos .contactos {
+  list-style: none;
+  padding: 0;
+}
+.contacto-datos .contactos li {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.contacto-datos .contactos li img {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+}
+.contacto-datos .contactos li a {
+  color: white;
+  font-family: "textos";
+  text-decoration: none;
+  transition: color 0.3s, color 0.3s;
+}
+
+.contacto-datos .contactos li a:hover {
+  color:yellow;
+}
+
+.columna-derecha {
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+}
+
+.columna-derecha .datos-sucursal {
+  font-size: 16px;
+}
+.columna-derecha .datos-sucursal iframe {
+  width: 100%;
+  height: 250px; 
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.columna-derecha .datos-sucursal .datos-ubicacion{
+  font-family: "textos";
+  align-items: center;
+  display:flex;
+  font-size: 16px;
+}
+
+.columna-derecha .datos-sucursal .datos-ubicacion img{
+  margin-right: 8px;
+}
+
+.experiencia {
+  padding-top: 20px;
+  border-top: 1px solid #eee; 
+}
+
+.experiencia form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 90%;
+  margin: 0 auto; 
+}
+
+.experiencia form label {
+  font-size: 16px;
+  text-align: left;
+  color:yellow;
+}
+
+.experiencia form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.experiencia form p {
+  text-align: center;
+  font-size: 14px;
+  margin: 0;
+}
+
+.experiencia form button {
+  padding: 10px 15px;
+  background-color: yellow;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "gym-font";
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.experiencia form button:hover{
+  background-color: black;
+  color:yellow;
+}
+
+/*Acceso (lógica a aplicar en JS)*/
+
+.contenido-principal .cuadro-acceso{
+  max-width: 90%; 
+  width: 90%;
+  margin: 20px auto; 
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color:white;
+  font-family: "textos";
+}
+
+.contenido-principal .cuadro-acceso h1{
+  font-size:30px;
+  font-family: "titulos";
+}
+
+.contenido-principal .cuadro-acceso .datos-acceso .login{
+  font-size:18px;
+  text-align: left;
+  font-family: "textos";
+  gap:15px;
+}
+
+.contenido-principal .cuadro-acceso input{
+  width: 100%; 
+  padding: 10px;
+  margin-top: 5px; 
+  border: 1px solid #555;
+  border-radius: 4px;
+  margin-bottom:15px;
+  background-color: #3e3e3e;
+  color: white;
+}
+
+.contenido-principal .cuadro-acceso .login label{
+  font-family: "textos";
+  display: flex; 
+  flex-direction: column; 
+  width: 100%; 
+  text-align: left; 
+  font-size: 16px;
+  padding-top:10px;
+}
+
+.contenido-principal .cuadro-acceso .login button{
+  font-family: "textos";
+}
+
+.contenido-principal .cuadro-acceso button[type="button"]{
+  width: 100%; 
+  padding: 10px;
+  margin-top: 5px; 
+  border: 1px solid #555;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+  background-color: yellow;
+  color: black;
+  cursor:pointer;
+}
+
+.contenido-principal .cuadro-acceso button[type="button"]:hover{
+  background-color: black;
+  color: yellow;
+}
+
+.contenido-principal .cuadro-acceso p{
+  font-size: 16px;
+  padding-top:10px;
+  display:block;
+  width:100%;
+  text-align: center;
+}
+
+.contenido-principal .cuadro-acceso a{
+  padding-top:10px;
+  display:block;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+    /*Cabecera principal*/
+    .cabecera-principal {
+        height: 100px;
+        font-size: 20px;
+    }
+    .cabecera-principal img{
+      height: 80px;
+      width:auto;
+      margin-right: 10px;
+    }
+    .cabecera-principal nav {
+        display: flex; 
+        align-items: center;
+        border-left: 1px solid #333333;
+        border-right: 1px solid #333333;
+        padding-left: 35px;
+        padding-right: 35px;
+        position: static; 
+        width: auto;
+        flex-direction: row;
+        height: 100%;
+        margin-left: 35px; 
+    }
+
+    .cabecera-principal ul {
+        flex-direction: row; 
+    }
+
+    .menu-hamburguesa {
+        display: none;
+    }
+
+    /*Index.html*/
+    .contenido-principal .principal .contenido-superpuesto {
+        max-width: 800px; 
+        top: 70%;
+    }
+
+    .contenido-principal .principal .contenido-superpuesto p {
+        font-size: 50px; 
+    }
+
+    .contenido-principal .principal button {
+        font-size: 50px; 
+    }
+
+    .contenido-principal .principal img {
+        height: 100vh;
+    }
+    
+    .contenido-principal .principal p {
+        font-size: 50px;
+        top: 35%;
+    }
+
+    .contenido-principal .principal button {
+        font-size: 50px;
+        top: 50%;
+    }
+
+    .contenido-principal .sobre-nosotros .sn-article {
+        flex-direction: row; 
+        width: 90%;
+        max-width: 1300px; 
+        margin: 0 auto; 
+        align-items: center; 
+    }
+    
+    .contenido-principal .sobre-nosotros .sn-article .sn-texto {
+        flex: 1; 
+        padding-right: 40px; 
+        max-width: 60%; 
+        text-align: center;
+    }
+
+     .contenido-principal .sobre-nosotros .sn-article .sn-texto p{
+        font-size:22px;
+    }
+    
+    .contenido-principal .sobre-nosotros .sn-article img {
+        width: 300px; 
+        height: 300px;
+        object-fit: cover;
+        order: 2; 
+    }
+
+    .contenido-principal .sobre-nosotros .sn-article {
+        flex-direction: row; 
+        width: 100%;
+    }
+
+    .contenido-principal .entrenamientos-preview {
+        padding: 0 20%; 
+    }
+    
+    .contenido-principal .entrenamientos-preview .entrenamiento-contenedor {
+        flex: 1; 
+        width: auto;
+        margin-bottom: 0;
+    }
+
+    .contenido-principal .entrenamientos-preview .titulo-entrenamientos {
+        font-size: 35px;
+    }
+    
+    .contenido-principal .testimonios .cuadro-testimonio {
+        flex-direction: row; 
+        padding: 20px 20%;
+    }
+    
+    .contenido-principal .testimonios .cuadro-testimonio p {
+        width: auto;
+    }
+
+    .contenido-principal .planes article {
+        flex-direction: row; 
+        align-items: center;
+        width: 100%; 
+    }
+
+    /*Equipo de profes*/
+    .contenido-principal .equipo-de-profes .contenedor-profesores {
+        flex-direction: row; 
+        padding: 20px 20%;
+    }
+
+    .contenido-principal .equipo-de-profes .contenedor-profesores .profesor {
+        width: auto;
+        flex: 1;
+    }
+
+    /*Entrenamientos*/
+    .contenido-principal .planes article img {
+        width: 150px; 
+        height: 100px; 
+        margin-right: 30px; 
+        flex-shrink: 0;
+    }
+
+    .contenido-principal .planes article .texto-plan {
+        flex-grow: 1; 
+    }
+
+    .contenido-principal .planes {
+        max-width: 1000px; 
+        padding: 30px 20px;
+    }
+    .contenido-principal .cronograma p{
+      display:none;
+    }
+
+    
+    /*Contacto*/
+    .contenido-pagina-contacto {
+        max-width: 1000px;
+        padding: 30px;
+    }
+    
+    .contacto-cuadro-superior {
+        flex-direction: row; 
+        gap: 30px;
+    }
+    
+    .columna-derecha .datos-sucursal iframe {
+        height: 400px;
+    }
+    
+    .experiencia-contenedor {
+        width: 600px; 
+    }
+
+    /*Inscripción y acceso*/
+    .contenido-principal .inscripcion,
+    .contenido-principal .cuadro-acceso {
+        max-width: 600px;
+        margin: 40px auto;
+    }
 }

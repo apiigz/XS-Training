@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "nombre": "Xavier Santos",
+        "descripcion": "Fundador de XS Training. Es profesor y egresado de la Universidad Nacional de Río Cuarto (UNCR) en la carrera de Profesorado de Educación Física. ",
+        "imagen": "./recursos/imagenes/profe-1.webp",
+        "alt": "Imagen del profesor"
+    },
+    {
+        "id": 2,
+        "nombre": "Mariana Graciano",
+        "descripcion": "Profesora especializada en entrenamiento funcional orientado para quienes buscan un gran físico. Es egresada de la UNCR en la carrera de Profesorado de Educación Física.",
+        "imagen": "./recursos/imagenes/profe-2.webp",
+        "alt": "Imagen del profesor"
+    },
+    {
+        "id": 3,
+        "nombre": "Kevin Torres",
+        "descripcion": "Profesor especializado en entrenamiento deportivo orientado a deportistas profesionales o no. Es egresado de la UNCR en la carrera de Profesorado de Educación Física.",
+        "imagen": "./recursos/imagenes/profe-3.webp",
+        "alt": "Imagen del profesor"
+    }
+]

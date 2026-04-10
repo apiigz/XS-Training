@@ -1,0 +1,12 @@
+[
+    {
+        "mail": "usuario@gmail.com",
+        "contraseña": "usuario",
+        "tipoUsuario": "usuario"
+    },
+    {
+        "mail": "admin@gmail.com",
+        "contraseña": "admin",
+        "tipoUsuario": "admin"
+    }
+]

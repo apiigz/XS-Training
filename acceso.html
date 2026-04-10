@@ -4,45 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="recursos/css/index.css">
+    <script type="module" src="./recursos/js/index.js"></script>
+    <script src="./recursos/js/db/conexion.js"></script>
     <title>Acceso</title>
 </head>
 <body>
     <header class="cabecera-principal">
-        <a href = "https://www.instagram.com/xs.training1"><img src = "recursos/imagenes/xslogo.jpg"></a>
-        <nav> <!-- Barra de navegación, con accesos a las otras páginas. La parte de arriba-->
+        <a href = "index.html"><img src = "recursos/imagenes/xslogo.jpg"></a>
+        <button class="menu-hamburguesa" aria-label="Menú principal" aria-expanded="false">
+            <span class="linea-hamburguesa"></span>
+            <span class="linea-hamburguesa"></span>
+            <span class="linea-hamburguesa"></span>
+        </button>
+        <nav> 
             <ul>
-                <li><a href="index.html">INICIO</a></li> <!--"/" nos redirige a la raìz del proyecto, no a la página inicio-->
+                <li><a href="index.html">INICIO</a></li> 
                 <li><a href ="entrenamientos.html">ENTRENAMIENTOS</a></li>
-                <li><a href="inscripcion.html">INSCRIPCION</a></li>
+                <li><a href="inscripcion.html">INSCRIPCIÓN</a></li>
                 <li><a href="contacto.html">CONTACTO</a></li>
                 <li><a href="acceso.html">ACCESO</a></li>
             </ul>
         </nav>
     </header>
-    <main>
-        <h1>MI CUENTA</h1>
-        <div class="datos-acceso">
-            <label for="id-cronograma">
-                Mis turnos
-                <button name="cronograma" id="id-cronograma">Cronograma</button>
-            </label>
-            <label for="id-reservas">
-                Mis reservas
-                <button name="reservas" id="id-reservas">Reservas</button>
-            </label>
-            <label for="id-estado-cuenta">
-                Estado de la cuenta
-                <button name="estado" id="id-estado-cuenta">Estado de la cuenta y pagos efectuados</button>
-            </label>
-        </div>
-        <a href="">Cerrar sesion</a> <!--Lógica para cerrar sesión-->
+    <main class="contenido-principal">
+        <section class="clase-cuadro-acceso" id="cuadro-acceso">
+        </section>
     </main>
     <footer class="pie-principal">
-        <address> <!--Elemento semántico para indicar las direcciones-->
-            <ul><!--El pie con datos de contacto, dirección y demás. La parte de abajo.-->
+        <address> 
+            <ul>
                 <li><a href="https://www.instagram.com/xs.training1"><img src="recursos/imagenes/ig.png" alt="Logo Instagram"></a></li>
                 <li><a class="logo-wpp" href="https://wa.me/+5493515556666"><img src="recursos/imagenes/ws.png" alt="Logo wpp"></a></li>
             </ul>
+            <p>268 Córdoba, Canals</p>
         </address>
     </footer>
 </body>

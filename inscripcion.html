@@ -4,16 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="recursos/css/index.css">
+    <script type="module" src="./recursos/js/index.js"></script>
+    <script src="./recursos/js/db/conexion.js"></script>
     <title>Inscripcion</title>
 </head>
 <body>
     <header class="cabecera-principal">
-        <a href = "https://www.instagram.com/xs.training1"><img src = "recursos/imagenes/xslogo.jpg"></a>
+        <a href = "index.html"><img src = "recursos/imagenes/xslogo.jpg"></a>
+        <button class="menu-hamburguesa" aria-label="Menú principal" aria-expanded="false">
+            <span class="linea-hamburguesa"></span>
+            <span class="linea-hamburguesa"></span>
+            <span class="linea-hamburguesa"></span>
+        </button>
         <nav> <!-- Barra de navegación, con accesos a las otras páginas. La parte de arriba-->
             <ul>
                 <li><a href="index.html">INICIO</a></li>
                 <li><a href ="entrenamientos.html">ENTRENAMIENTOS</a></li>
-                <li><a href="inscripcion.html">INSCRIPCION</a></li>
+                <li><a href="inscripcion.html">INSCRIPCIÓN</a></li>
                 <li><a href="contacto.html">CONTACTO</a></li>
                 <li><a href="acceso.html">ACCESO</a></li>
             </ul>
@@ -21,10 +28,10 @@
     </header>
     <main class="contenido-principal">
         <section class="inscripcion">
-            <h1>
-                INSCRIPCION
-            </h1>
             <form action="inscripcion.html" method="post">
+                <h1>
+                    INSCRIPCIÓN
+                </h1>
                 <div class="formulario-inscripcion">
                     <label for="text-nombre">
                         NOMBRE
@@ -46,7 +53,7 @@
                         CORREO ELECTRONICO
                         <input type="email" name="correo" id="email-correo">
                     </label>
-                    <button type="submit" name="enviar-datosinscripcion"> <!--Indicar el type para el botón, aunque no haga nada este actua como un elemento semántico-->
+                    <button type="submit" name="enviar-datosinscripcion" id="boton-enviar-inscripcion"> <!--Indicar el type para el botón, aunque no haga nada este actua como un elemento semántico-->
                         INSCRIBIRSE
                     </button>
                 </div>
@@ -59,6 +66,7 @@
                 <li><a href="https://www.instagram.com/xs.training1"><img src="recursos/imagenes/ig.png" alt="Logo Instagram"></a></li>
                 <li><a class="logo-wpp" href="https://wa.me/+5493515556666"><img src="recursos/imagenes/ws.png" alt="Logo wpp"></a></li>
             </ul>
+            <p>268 Córdoba, Canals</p>
         </address>
     </footer>
 </body>

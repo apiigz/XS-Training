@@ -4,52 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="recursos/css/index.css">
+    <script type="module" src="./recursos/js/index.js"></script>
+    <script src="./recursos/js/db/conexion.js"></script>
     <title>Contacto</title>
 </head>
 <body>
     <header class="cabecera-principal">
-        <a href = "https://www.instagram.com/xs.training1"><img src = "recursos/imagenes/xslogo.jpg"></a>
+        <a href = "index.html"><img src = "recursos/imagenes/xslogo.jpg"></a>
+        <button class="menu-hamburguesa" aria-label="Menú principal" aria-expanded="false">
+            <span class="linea-hamburguesa"></span>
+            <span class="linea-hamburguesa"></span>
+            <span class="linea-hamburguesa"></span>
+        </button>
         <nav> <!-- Barra de navegación, con accesos a las otras páginas. La parte de arriba-->
             <ul>
                 <li><a href="index.html">INICIO</a></li>
                 <li><a href ="entrenamientos.html">ENTRENAMIENTOS</a></li>
-                <li><a href="inscripcion.html">INSCRIPCION</a></li>
+                <li><a href="inscripcion.html">INSCRIPCIÓN</a></li>
                 <li><a href="contacto.html">CONTACTO</a></li>
                 <li><a href="acceso.html">ACCESO</a></li>
             </ul>
         </nav>
     </header>
-    <main>
-        <h1> CONTACTO </h1>
-        <div class="contactos-sucursal">
-            <label for="id-contactos">
-                ACCESOS DIRECTOS
-                <ol class="contactos" id="id-contactos">
-                    <li><img src="recursos/imagenes/ws.svg" alt="Logo wpp"><a href="https://wa.me/+5493463402738">+54 9 3463 40-2738</a></li>
-                    <li><img src="recursos/imagenes/gmail.svg" alt="Logo gmail"><a href="mailto:xavierchinosantos@gmail.com">xavierchinosantos@gmail.com</a></li>
-                    <li><img src="recursos/imagenes/ig.svg" alt="Logo ig"><a href="https://www.instagram.com/xs.training1">xs.training1</a></li>
-                </ol>
-            </label>
-            <label for="id-datos-sucursal">
-                SUCURSAL
-                <div class="datos-sucursal" id="id-datos-sucursal">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12139.747230564974!2d-64.21597848363045!3d-31.47816167511286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a3983b74ec7b%3A0x31d1c694301a7982!2sCanals%2C%20X5017%20C%C3%B3rdoba!5e1!3m2!1ses-419!2sar!4v1758926940137!5m2!1ses-419!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    Córdoba 268, Canals, Córdoba
+    <main class="contenido-pagina-contacto">
+        <div class="contacto-cuadro-superior">
+            
+            <section class="columna-izquierda">
+                <div class="contacto-texto">
+                    <h1>CONTACTO</h1>
+                    <h2>ESTAMOS ANSIOSOS POR CONOCERTE</h2>
+                    <p>Esperamos verte pronto por nuestra sucursal, no dudes en contactarnos para resolver todas tus dudas y comenzar un nuevo capítulo en tu vida</p>
                 </div>
-            </label>
-        </div>
-        <div class="experiencia">
+                
+                <div class="contacto-datos">
+                    <h3>ACCESOS DIRECTOS</h3>
+                    <ul class="contactos"> 
+                        <li><img src="recursos/imagenes/ws.png" alt="Logo wpp"><a href="https://wa.me/+5493463402738">+54 9 3463 40-2738</a></li> 
+                        <li><img src="recursos/imagenes/gmail.png" alt="Logo gmail"><a href="mailto:xavierchinosantos@gmail.com">xavierchinosantos@gmail.com</a></li> 
+                        <li><img src="recursos/imagenes/ig.png" alt="Logo ig"><a href="https://www.instagram.com/xs.training1">xs.training1</a></li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section class="columna-derecha">
+                <div class="datos-sucursal">
+                <iframe src="https://www.google.com/maps/embed?pb=!4v1764111662162!6m8!1m7!1sb0N7ve6rMPz8gibGyAG3eA!2m2!1d-33.56353209969728!2d-62.88098115302995!3f200.8980760463132!4f0.05951807507024398!5f1.1155991038648159" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                    <article class="datos-ubicacion">
+                        <img src="recursos/imagenes/location.png" alt="Logo ubicación">
+                        <p>Córdoba 257, Canals, Córdoba</p>
+                    </article>
+                </div>
+            </section>
+            
+        </div> <div class="experiencia">
             <form action="contacto.html" method="post">
-                <label>
-                    CONTANOS TU EXPERIENCIA
-                    <input type="text" name="experiencia" id="id-experiencia" required>
-                </label>
-                <p>
-                    ¡Tu opinión nos ayuda a mejorar!
-                </p>
-                <button type="submit" name="enviar">
-                    ENVIAR
-                </button>
+                <label for="id-experiencia">CONTANOS TU EXPERIENCIA</label>
+                <textarea name="experiencia" id="id-experiencia" required rows="5"></textarea>
+                <p>¡Tu opinión nos ayuda a mejorar!</p>
+                <button type="submit" name="enviar" id="enviar-experiencia">ENVIAR</button>
             </form>
         </div>
     </main>
@@ -59,6 +70,7 @@
                 <li><a href="https://www.instagram.com/xs.training1"><img src="recursos/imagenes/ig.png" alt="Logo Instagram"></a></li>
                 <li><a class="logo-wpp" href="https://wa.me/+5493515556666"><img src="recursos/imagenes/ws.png" alt="Logo wpp"></a></li>
             </ul>
+            <p>268 Córdoba, Canals</p>
         </address>
     </footer>
 </body>
