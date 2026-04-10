@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="recursos/css/index.css">
+    <title>Acceso</title>
+</head>
+<body>
+    <header class="cabecera-principal">
+        <a href = "https://www.instagram.com/xs.training1"><img src = "recursos/imagenes/xslogo.jpg"></a>
+        <nav> <!-- Barra de navegación, con accesos a las otras páginas. La parte de arriba-->
+            <ul>
+                <li><a href="index.html">INICIO</a></li> <!--"/" nos redirige a la raìz del proyecto, no a la página inicio-->
+                <li><a href ="entrenamientos.html">ENTRENAMIENTOS</a></li>
+                <li><a href="inscripcion.html">INSCRIPCION</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+                <li><a href="acceso.html">ACCESO</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>MI CUENTA</h1>
+        <div class="datos-acceso">
+            <label for="id-cronograma">
+                Mis turnos
+                <button name="cronograma" id="id-cronograma">Cronograma</button>
+            </label>
+            <label for="id-reservas">
+                Mis reservas
+                <button name="reservas" id="id-reservas">Reservas</button>
+            </label>
+            <label for="id-estado-cuenta">
+                Estado de la cuenta
+                <button name="estado" id="id-estado-cuenta">Estado de la cuenta y pagos efectuados</button>
+            </label>
+        </div>
+        <a href="">Cerrar sesion</a> <!--Lógica para cerrar sesión-->
+    </main>
+    <footer class="pie-principal">
+        <address> <!--Elemento semántico para indicar las direcciones-->
+            <ul><!--El pie con datos de contacto, dirección y demás. La parte de abajo.-->
+                <li><a href="https://www.instagram.com/xs.training1"><img src="recursos/imagenes/ig.png" alt="Logo Instagram"></a></li>
+                <li><a class="logo-wpp" href="https://wa.me/+5493515556666"><img src="recursos/imagenes/ws.png" alt="Logo wpp"></a></li>
+            </ul>
+        </address>
+    </footer>
+</body>
+</html>
