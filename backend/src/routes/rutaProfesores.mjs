@@ -1,4 +1,4 @@
-import {Router} from 'express'; //=> no, no está vibecodeado... por las dudas.
+import {Router} from 'express'; 
 
 import {controladorProfesores} from '../controllers/controladorProfesores.mjs';
 
