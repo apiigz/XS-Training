@@ -271,7 +271,6 @@ export function inicializarInscripciones(contenedorPadre) {
         const tarjeta = e.target.closest('.tarjeta-crud-inscripcion');
         if (!tarjeta) return;
 
-        // Capturamos explícitamente los 5 controladores de la inscripción
         const nombre = tarjeta.querySelector('.edit-ins-nombre');
         const apellido = tarjeta.querySelector('.edit-ins-apellido');
         const dni = tarjeta.querySelector('.edit-ins-dni');
@@ -283,7 +282,6 @@ export function inicializarInscripciones(contenedorPadre) {
             const modoEdicion = nombre.getAttribute('contenteditable') === 'true';
 
             if (!modoEdicion) {
-                // ACTIVAR EDICIÓN INDEPENDIENTE EN CADA CONTROLADOR
                 const campos = [nombre, apellido, dni, tel, correo];
                 campos.forEach(c => {
                     c.setAttribute('contenteditable', 'true');
@@ -314,7 +312,6 @@ export function inicializarInscripciones(contenedorPadre) {
 
                     if (id === 'nuevo') tarjeta.dataset.id = datos.id;
 
-                    // APAGAR EDICIÓN INDEPENDIENTE
                     const campos = [nombre, apellido, dni, tel, correo];
                     campos.forEach(c => {
                         c.setAttribute('contenteditable', 'false');
@@ -392,7 +389,6 @@ export function inicializarTestimonios(contenedorPadre) {
                 btnEditar.style.color = '#5cb85c';
             } else {
                 const id = tarjeta.dataset.id;
-                // Limpiamos las comillas que puedan quedar visualmente en el p
                 const contenidoLimpio = contenido.innerText.trim().replace(/^"|"$/g, '');
 
                 const paquete = {
@@ -415,7 +411,6 @@ export function inicializarTestimonios(contenedorPadre) {
                     contenido.setAttribute('contenteditable', 'false');
                     autor.style.borderBottom = contenido.style.borderBottom = 'none';
                     
-                    // Volvemos a envolver visualmente en comillas prolijas
                     contenido.innerText = `"${paquete.contenido}"`;
 
                     btnEditar.innerText = 'EDITAR';
@@ -447,7 +442,6 @@ export function renderizarAdminSuscripciones(contenedor, listaSuscripciones, usu
     entrenamientosCache = entrenamientos;
 
     const filas = listaSuscripciones.map(susc => {
-        // Formateamos las fechas de Postgres para los inputs de tipo date (AAAA-MM-DD)
         const fPago = susc.fechapago ? susc.fechapago.split('T')[0] : '';
         const fVenc = susc.fechavencimiento ? susc.fechavencimiento.split('T')[0] : '';
 
@@ -813,7 +807,6 @@ export function inicializarReservas(contenedorPadre) {
         if (!tarjeta) return;
 
         const id = tarjeta.dataset.id;
-        // 🚨 CONTROL CRÍTICO: Si el id es "nuevo", dejamos que lo maneje el otro escuchador
         if (id === 'nuevo' && !btnBorrar) return; 
 
         const txtEstado = tarjeta.querySelector('.txt-reserva-estado');
@@ -835,7 +828,6 @@ export function inicializarReservas(contenedorPadre) {
                 try {
                     console.log("capturado:", id)
                     console.log("capturado:", paquete)
-                    // Forzamos que la URL se arme limpia
                     let res = await fetch(`http://localhost:3000/api/reservas/${id}`, {
                         method: 'PUT',
                         headers: { 'Content-Type': 'application/json' },

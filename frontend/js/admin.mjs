@@ -27,11 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const respuesta = await fetch('http://localhost:3000/api/entrenamientos');
             const entrenamientos = await respuesta.json();
             
-            // 1. Renderizamos e inicializamos el módulo aislado
             renderizarAdminEntrenamientos(panelCentral, entrenamientos);
             inicializarEntrenamientos(panelCentral);
 
-            // 2. Control del botón agregar exclusivo de este módulo
             document.getElementById('btn-add-entrenamiento').addEventListener('click', () => {
                 const lista = document.getElementById('lista-crud-entrenamientos');
                 const msgVacio = lista.querySelector('.msg-vacio');

@@ -27,7 +27,6 @@ export class controladorTestimonios{
         }
     }
 
-    // PUT /api/testimonios/:id
     async putTestimonio(req, res) {
         try {
             const { id } = req.params;
@@ -44,7 +43,6 @@ export class controladorTestimonios{
         }
     }
 
-    // DELETE /api/testimonios/:id
     async deleteTestimonio(req, res) {
         try {
             const { id } = req.params;
