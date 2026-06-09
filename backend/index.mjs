@@ -20,6 +20,7 @@ const puerto = 3000;
 const app = express();
 
 app.use(express.static(path.resolve('..', 'frontend')));
+app.use(express.json());
 
 //Lugar para usar las rutas
 app.use('/api', rutaProfesores);
@@ -33,6 +34,7 @@ app.use('/api', rutaClasesProgramadas);
 app.use('/api', rutaEstados);
 app.use('/api', rutaSuscripciones);
 app.use('/api', rutaReservas);
+app.use('/api/auth/login', rutaUsuarios); 
 
 app.listen(puerto, () => {
   console.log(`Servidor escuchando en el puerto ${puerto}`);

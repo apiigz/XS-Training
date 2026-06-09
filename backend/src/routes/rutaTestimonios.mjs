@@ -7,5 +7,8 @@ const router = Router();
 const controlador = new controladorTestimonios();
 
 router.get('/testimonios', controlador.getTestimonios);
+router.post('/testimonios', controlador.postTestimonio);
+router.put('/testimonios/:id', controlador.putTestimonio);
+router.delete('/testimonios/:id', controlador.deleteTestimonio);
 
 export default router;

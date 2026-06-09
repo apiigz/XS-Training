@@ -1,4 +1,4 @@
-import { obtenerUsuarios, guardarUsuario, login, register, obtenerInscripciones, guardarInscripcion, obtenerExperiencias, guardarExperiencia } from "./db/db.js";
+import { obtenerUsuarios, guardarUsuario, register, obtenerInscripciones, guardarInscripcion, obtenerExperiencias, guardarExperiencia } from "./db/db.js";
 
 //Renderizar entrenamientos (entrenamientos.json)
 function renderizarEntrenamientos(arregloEntrenamientos, contenedor){
@@ -66,162 +66,35 @@ function renderizarLogin(contenedor){
     contenedor.innerHTML = `
     <section class="cuadro-acceso">
         <h1>MI CUENTA</h1>
-        <form action="/acceso.html" method="post" id="form-login">
+        
+        <form id="form-login" class="datos-acceso">
+            
             <article class="login">
                 <label for="login-email">
                     USUARIO O CORREO
-                    <input type="email" name="mail" id="login-email">
+                    <input type="email" name="mail" id="login-email" required placeholder="ejemplo@gym.com">
                 </label>
             </article>
+            
             <article class="login">
-                <label for="login-contraseña">
+                <label for="login-contrasena">
                     CONTRASEÑA
-                    <input type="password" name="contraseña" id="login-contraseña">
+                    <input type="password" name="contrasena" id="login-contrasena" required placeholder="******">
                 </label>
             </article>
-            <button type="button" id="boton-login">
+
+            <p id="mensaje-error" style="color: #ff4d4d; display: none; text-align: center; font-weight: bold; margin: 10px 0; font-size: 14px;"></p> 
+            
+            <button type="submit" id="boton-login" style="width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #555; border-radius: 4px; background-color: yellow; color: black; cursor: pointer; font-family: 'gym-font'; font-size: 16px;">
                 Iniciar sesión
             </button>
-            <p>¿No tenés una cuenta aún?</p>
-            <a href="" id="registro">Registrarse</a> 
-            <a href="" id="cambiar-contraseña">Olvidé mi contraseña</a> 
+            
         </form>
     </section>
     `
-
-    const botonRegistrarse = document.getElementById("registro")
-    botonRegistrarse.addEventListener('click', function(e){
-        e.preventDefault()
-        renderizarRegistro(contenedor);
-    })
-
-    const botonCambiarContraseña = document.getElementById("cambiar-contraseña")
-    botonCambiarContraseña.addEventListener('click', function(e){
-        e.preventDefault()
-        renderizarCambioContraseña(contenedor)
-    })
-
-    funcionalidadesLogin();
 }
 
-//Renderizar registro
-function renderizarRegistro(contenedor){
-    contenedor.innerHTML = `
-    <section class="cuadro-acceso">
-        <h1>MI CUENTA</h1>
-        <form action="/acceso.html" method="post">
-            <article class="login">
-                <label for="register-email">
-                    USUARIO O CORREO
-                    <input type="email" name="mail" id="register-email">
-                </label>
-            </article>
-            <article class="login">
-                <label for="register-contraseña">
-                    CONTRASEÑA
-                    <input type="password" name="contraseña" id="register-contraseña">
-                </label>
-            </article>
-            <article class="login">
-                <label for="register-contraseña-repetir">
-                    REPETIR CONTRASEÑA
-                    <input type="password" name="contraseña-repetir" id="register-contraseña-repetir">
-                </label>
-            </article>
-            <button type="button" id="boton-registrar">
-                Crear cuenta
-            </button>
-            <p>¿Ya tenés una cuenta?</p>
-            <a href="" id="login">Iniciar sesión</a> 
-            <a href="" id="cambiar-contraseña">Olvidé mi contraseña</a> 
-        </form>
-    </section>
-    `
 
-    const botonLogin = document.getElementById('login')
-    botonLogin.addEventListener('click', function(e){
-        e.preventDefault()
-        renderizarLogin(contenedor)
-    })
-
-    const botonCambiarContraseña = document.getElementById('cambiar-contraseña')
-    botonCambiarContraseña.addEventListener('click', function(e){
-        e.preventDefault()
-        renderizarCambioContraseña(contenedor)
-    })
-
-    funcionalidadesRegister()
-}
-
-//Renderizar recuperación de contraseña
-function renderizarCambioContraseña(contenedor){
-    contenedor.innerHTML = `
-    <section class="cuadro-acceso">
-        <h1>MI CUENTA</h1>
-        <form action="/acceso.html" method="post">
-            <article class="login">
-                <label for="login-email">
-                    USUARIO O CORREO
-                    <input type="email" name="mail" id="login-email">
-                </label>
-            </article>
-            <article class="login">
-                <label for="cambio-contraseña">
-                    NUEVA CONTRASEÑA
-                    <input type="password" name="contraseña" id="cambio-contraseña">
-                </label>
-            </article>
-            <article class="login">
-                <label for="cambio-contraseña-repetir">
-                    REPETIR NUEVA CONTRASEÑA
-                    <input type="password" name="contraseña-repetir" id="cambio-contraseña-repetir">
-                </label>
-            </article>
-            <button type="button" id="boton-cambiar-contraseña">
-                Cambiar contraseña
-            </button>
-            <p>¿Querés registrarte o ya tenés una cuenta?</p>
-            <a href="" id="registro">Registrarse</a> 
-            <a href="" id="login">Iniciar sesión</a> 
-        </form>
-    </section>
-    `
-
-    const botonRegistrarse = document.getElementById('registro')
-    botonRegistrarse.addEventListener('click', function(e){
-        e.preventDefault()
-        renderizarRegistro(contenedor)
-    })
-
-    const botonLogin = document.getElementById('login')
-    botonLogin.addEventListener('click', function(e){
-        e.preventDefault()
-        renderizarLogin(contenedor)
-    })
-}
-
-function funcionalidadesLogin(){
-    const campoUsuario = document.getElementById("login-email")
-    const campoContraseña = document.getElementById("login-contraseña")
-
-    const formularioLogin = document.getElementById("form-login")
-
-    const botonLoginButton = document.getElementById("boton-login")
-    botonLoginButton.addEventListener('click', () =>{
-        login(campoUsuario, campoContraseña)
-    })
-}
-
-function funcionalidadesRegister(){
-    const campoUsuario = document.getElementById('register-email')
-    const campoContraseña = document.getElementById('register-contraseña')
-    const campoRepetirContraseña = document.getElementById('register-contraseña-repetir')
-
-    const botonRegisterButton = document.getElementById("boton-registrar")
-    botonRegisterButton.addEventListener('click', () =>{
-        register(campoUsuario, campoContraseña, campoRepetirContraseña)
-    })
-}
 
 //Guardar la inscripción, es de inscripcion.html
 function enviarInscripcion(){
@@ -265,4 +138,8 @@ function enviarExperiencia(){
     alert("¡Gracias por mandarnos tu experiencia! Nos ayuda mucho a mejorar")
 }
 
-export {renderizarEntrenamientos, renderizarProfesores, renderizarTestimonios, renderizarCambioContraseña, renderizarRegistro, renderizarLogin, enviarInscripcion, enviarExperiencia, funcionalidadesLogin}
+//PARTE ADMINISTRATIVA 
+
+//Al fina cree otro archivo
+
+export {renderizarEntrenamientos, renderizarProfesores, renderizarTestimonios, renderizarLogin, enviarInscripcion, enviarExperiencia};

@@ -9,30 +9,6 @@ function guardarUsuario(arregloUsuarios){
 }
 
 //Login
-function login(correoElemento, contraseñaElemento){
-    const correo = correoElemento.value
-    const contraseña = contraseñaElemento.value
-
-    let usuarios = obtenerUsuarios()
-
-    const usuarioEncontrado = usuarios.find(
-        u => u.mail === correo && u.contraseña === contraseña
-    );
-    if (!usuarioEncontrado){
-        alert('Usuario o contraseña incorrecta')
-        return;
-    }
-    else{
-        console.log(`Bienvenido ${usuarioEncontrado.mail}`)
-    }
-    const contenedor = document.getElementById('cuadro-acceso')
-    if(usuarioEncontrado.tipoUsuario === 'usuario'){
-        renderizarInterfazUsuario(contenedor)
-    }
-    else{
-        renderizarInterfazAdmin(contenedor)
-    }
-}
 
 //Register
 function register(correoElemento, contraseñaElemento, repetirContraseñaElemento){
@@ -134,4 +110,4 @@ function obtenerExperiencias(){
 function guardarExperiencia(arregloExperiencias){
     localStorage.setItem("experiencias", JSON.stringify(arregloExperiencias));
 }
-export{obtenerUsuarios, guardarUsuario, login, register, obtenerInscripciones, guardarInscripcion, obtenerExperiencias, guardarExperiencia}
+export{obtenerUsuarios, guardarUsuario, register, obtenerInscripciones, guardarInscripcion, obtenerExperiencias, guardarExperiencia}

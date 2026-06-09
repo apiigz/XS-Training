@@ -10,4 +10,31 @@ export class obtenerSuscripciones{
             throw error;   
         }
     }
+
+    async crear(idusuario, identrenamiento, fechapago, fechavencimiento, monto, estado) {
+        const query = `
+            INSERT INTO suscripciones (idusuario, identrenamiento, fechapago, fechavencimiento, monto, estado)
+            VALUES ($1, $2, $3, $4, $5, $6)
+            RETURNING *;
+        `;
+        const resultado = await pool.query(query, [idusuario, identrenamiento, fechapago, fechavencimiento, monto, estado]);
+        return resultado.rows[0];
+    }
+
+    async actualizar(id, idusuario, identrenamiento, fechapago, fechavencimiento, monto, estado) {
+        const query = `
+            UPDATE suscripciones
+            SET idusuario = $1, identrenamiento = $2, fechapago = $3, fechavencimiento = $4, monto = $5, estado = $6
+            WHERE id = $7
+            RETURNING *;
+        `;
+        const resultado = await pool.query(query, [idusuario, identrenamiento, fechapago, fechavencimiento, monto, estado, id]);
+        return resultado.rows[0];
+    }
+
+    async eliminar(id) {
+        const query = 'DELETE FROM suscripciones WHERE id = $1 RETURNING *;';
+        const resultado = await pool.query(query, [id]);
+        return resultado.rows[0];
+    }
 }

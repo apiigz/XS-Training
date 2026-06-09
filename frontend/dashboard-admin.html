@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css">
+    <script type="module" src="/js/admin.mjs"></script>
+    <title>XS-Training - Panel de Control</title>
+</head>
+<body>
+    <header class="cabecera-principal">
+        <a href="index.html"><img src="/imagenes/xslogo.jpg" alt="Logo"></a>
+        <button class="menu-hamburguesa" aria-label="Menú principal" aria-expanded="false">
+            <span class="linea-hamburguesa"></span>
+            <span class="linea-hamburguesa"></span>
+            <span class="linea-hamburguesa"></span>
+        </button>
+        <nav> 
+            <ul>
+                <li><a href="index.html">INICIO</a></li> 
+                <li><a href="dashboard-admin.html">PANEL ADMIN</a></li>
+                <li><a href="#" id="boton-cerrar-sesion">CERRAR SESIÓN</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contenido-principal">
+        <section class="planes">
+            <div class="texto-plan">
+                <h1 style="font-size: 36px; padding-bottom: 10px;">PANEL DE ADMINISTRACIÓN</h1>
+                <p style="color: #ccc;">Bienvenido al centro de control de XS-Training. Seleccioná un módulo para gestionar la base de datos.</p>
+            </div>
+
+            <article style="background-color: #111; padding: 20px; border-radius: 8px; border: 1px solid #333; width: 100%;">
+                <div class="texto-plan" style="display: block;">
+                    <h1 style="font-size: 20px; color: yellow; margin-bottom: 15px;">MÓDULOS DE GESTIÓN</h1>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <p style="font-size: 14px; color: gray; margin-bottom: 8px; font-family: 'textos';">CONTENIDO DE LA PÁGINA</p>
+                        <a href="#" class="boton-enlace" id="btn-nav-entrenamientos" style="margin-right: 15px; margin-bottom: 10px;">Entrenamientos</a>
+                        <a href="#" class="boton-enlace" id="btn-nav-profesores" style="margin-right: 15px; margin-bottom: 10px;">Profesores</a>
+                        <a href="#" class="boton-enlace" id="btn-nav-testimonios" style="margin-bottom: 10px;">Testimonios</a>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <p style="font-size: 14px; color: gray; margin-bottom: 8px; font-family: 'textos';">CLIENTES Y SOLICITUDES</p>
+                        <a href="#" class="boton-enlace" id="btn-nav-inscripciones" style="margin-right: 15px; margin-bottom: 10px;">Inscripciones Pendientes</a>
+                        <a href="#" class="boton-enlace" id="btn-nav-suscripciones" style="margin-bottom: 10px;">Suscripciones y Pagos</a>
+                    </div>
+
+                    <div>
+                        <p style="font-size: 14px; color: gray; margin-bottom: 8px; font-family: 'textos';">AGENDA Y TURNOS</p>
+                        <a href="#" class="boton-enlace" id="btn-nav-clases" style="margin-right: 15px; margin-bottom: 10px;">Clases Programadas</a>
+                        <a href="#" class="boton-enlace" id="btn-nav-reservas" style="margin-bottom: 10px;">Reservas de Turnos</a>
+                    </div>
+                </div>
+            </article>
+
+            <div id="lista-usuarios-admin" style="width: 100%; margin-top: 25px;">
+                <p style="color: gray; text-align: center; font-family: 'textos'; padding: 40px 0;">
+                    Seleccioná uno de los módulos de arriba para ver, editar o agregar registros.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="pie-principal">
+        <address> 
+            <ul>
+                <li><a href="https://www.instagram.com/xs.training1"><img src="/imagenes/ig.png" alt="Logo Instagram"></a></li>
+                <li><a class="logo-wpp" href="https://wa.me/+5493515556666"><img src="/imagenes/ws.png" alt="Logo wpp"></a></li>
+            </ul>
+            <p>268 Córdoba, Canals</p>
+        </address>
+    </footer>
+</body>
+</html>

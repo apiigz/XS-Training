@@ -7,5 +7,8 @@ const router = Router();
 const controlador = new controladorInscripciones();
 
 router.get('/inscripciones', controlador.getInscripciones);
+router.post('/inscripciones', controlador.postInscripcion);
+router.put('/inscripciones/:id', controlador.putInscripcion);
+router.delete('/inscripciones/:id', controlador.deleteInscripcion);
 
 export default router;

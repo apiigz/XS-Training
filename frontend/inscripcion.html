@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/index.css">
     <script type="module" src="/js/logica.mjs"></script>
-    <script src="/js/db/conexion.js"></script>
     <title>Inscripcion</title>
 </head>
 <body>
@@ -28,36 +27,20 @@
     </header>
     <main class="contenido-principal">
         <section class="inscripcion">
-            <form action="inscripcion.html" method="post">
-                <h1>
-                    INSCRIPCIÓN
-                </h1>
-                <div class="formulario-inscripcion">
-                    <label for="text-nombre">
-                        NOMBRE
-                        <input type="text" name="nombre" id="text-nombre" required>
-                    </label>
-                    <label for="text-apellido">
-                        APELLIDO
-                        <input type="text" name="apellido" id="text-apellido" required>
-                    </label>
-                    <label for="text-dni">
-                        DNI
-                        <input type="text" name="dni" id="text-dni" required>
-                    </label>
-                    <label for="tel-numero">
-                        NÚMERO DE TELEFONO
-                        <input type="tel" name="numero" id="tel-numero" required>
-                    </label>
-                    <label for="email-correo">
-                        CORREO ELECTRONICO
-                        <input type="email" name="correo" id="email-correo">
-                    </label>
-                    <button type="submit" name="enviar-datosinscripcion" id="boton-enviar-inscripcion"> <!--Indicar el type para el botón, aunque no haga nada este actua como un elemento semántico-->
-                        INSCRIBIRSE
-                    </button>
-                </div>
-            </form>
+            <form id="form-inscripcion-publico">
+    <h1>INSCRIPCIÓN</h1>
+    <div class="formulario-inscripcion">
+        <label for="text-nombre">NOMBRE <input type="text" name="nombre" id="text-nombre" required></label>
+        <label for="text-apellido">APELLIDO <input type="text" name="apellido" id="text-apellido" required></label>
+        <label for="text-dni">DNI <input type="text" name="dni" id="text-dni" required></label>
+        <label for="tel-numero">NÚMERO DE TELEFONO <input type="tel" name="numero" id="tel-numero" required></label>
+        <label for="email-correo">CORREO ELECTRONICO <input type="email" name="correo" id="email-correo"></label>
+        
+        <button type="submit" id="boton-enviar-inscripcion">INSCRIBIRSE</button>
+        
+        <p id="mensaje-inscripcion" style="display: none; text-align: center; margin-top: 15px; font-family: 'textos'; font-weight: bold;"></p>
+    </div>
+</form>
         </section>
     </main>
     <footer class="pie-principal">
