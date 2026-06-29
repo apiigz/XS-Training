@@ -1,3 +1,5 @@
+## PASOS PARA CORRER EL PROYECTO
+
 1. Construir la imagen
 docker build -t imagen_admin .
 
@@ -14,3 +16,13 @@ docker exec -it contenedor_admin psql -U root -d admin
 
 4. Ejecutar
 SELECT * FROM usuario;
+
+5. Colocarse en la carpeta backend ("cd {arrastrar la carpeta backend a la terminal CMD})
+
+6. Ejecutar "npm i"
+
+7. Ejecutar "pnpm approve-builds"
+
+8. Seleccionar "bcrypt" con la barra espaciadora y darle enter
+
+9. En el archivo ".env" de backend completar con los campos dados en el archivo .env.example.
