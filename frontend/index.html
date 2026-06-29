@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css">
+    <title>XS Training - Inicio</title> 
+</head>
+<body>
+    <header class="cabecera-principal">
+        <div class="logo">
+            <a href = "index.html"><img src = "/imagenes/xslogo.jpg"></a>
+        </div>
+        <button class="menu-hamburguesa" aria-label="Menú principal" aria-expanded="false">
+            <span class="linea-hamburguesa"></span>
+            <span class="linea-hamburguesa"></span>
+            <span class="linea-hamburguesa"></span>
+        </button>
+        <nav> 
+            <ul>
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href ="entrenamientos.html">ENTRENAMIENTOS</a></li>
+                <li><a href="inscripcion.html">INSCRIPCIÓN</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+                <li><a href="acceso.html">ACCESO</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="contenido-principal">
+        <section class="principal"> 
+            <img src="/imagenes/imagen-principal.jpg" alt="Imagen principal representativa" srcset=""> 
+            <div class="contenido-superpuesto">
+                <p>
+                    “SUEÑA SIN MIEDOS, ENTRENA SIN LÍMITES”
+                </p>
+                <a href="inscripcion.html"><button name="Inscribirse">INSCRIBIRSE AHORA</button></a>
+            </div>
+        </section>
+        <section class="sobre-nosotros">
+            <article class="sn-article">
+                <img src="/imagenes/sn-visual.webp" alt="Imagen de sobre nosotros">
+                <div class="sn-texto">
+                    <h1>
+                        SOBRE NOSOTROS
+                    </h1>
+                    <p>
+                        En XS TRAINING nos dedicamos a brindar una experiencia de entrenamiento integral y moderna, pensada para acompañar a cada alumno en su camino hacia una vida más activa y saludable. <br> <br> Bajo la dirección de Xavier Santos y con el apoyo de un equipo de profesores especializados, ofrecemos un espacio donde la técnica, el aprendizaje y la constancia se combinan para lograr un progreso seguro y sostenido.
+                    </p>
+                </div>
+            </article>
+        </section>
+        <section class="entrenamientos-preview"> 
+            <article class="titulo-entrenamientos">
+                <h2>EMPIEZA TU ENTRENAMIENTO</h2>
+                <a href="entrenamientos.html" class="boton-enlace">Explora Todos <img src="/imagenes/flecha-derecha.png" alt="Vector flecha derecha"></a>
+            </article>
+            <div id="contenedor-entrenamientos" style="display: flex; gap: 20px; flex-wrap: wrap;"></div>
+        </section>
+        <section class="equipo-de-profes">
+            <h2>
+                EQUIPO DE PROFES
+            </h2>
+            <div class="contenedor-profesores" id="profesores">
+            </div>
+        </section>
+        <section class="testimonios" >
+            <h4>
+                TESTIMONIOS
+            </h4>
+            <section id="autores-testimonios">
+            </section>
+        </section>
+    </main>
+    <footer class="pie-principal">
+        <address> 
+            <ul>
+                <li><a href="https://www.instagram.com/xs.training1"><img src="/imagenes/ig.png" alt="Logo Instagram"></a></li>
+                <li><a class="logo-wpp" href="https://wa.me/+5493515556666"><img src="/imagenes/ws.png" alt="Logo wpp"></a></li>
+            </ul>
+            <p>268 Córdoba, Canals</p>
+        </address>
+    </footer>
+</body>
+<script type="module" src="/js/index.mjs"></script>
+</html>

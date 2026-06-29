@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css">
+    <script type="module" src="/js/index.mjs"></script>
+    <title>XS-Training - Mi Perfil</title>
+</head>
+<body>
+    <header class="cabecera-principal">
+        <a href="index.html"><img src="/imagenes/xslogo.jpg" alt="Logo"></a>
+        <button class="menu-hamburguesa" aria-label="Menú principal" aria-expanded="false">
+            <span class="linea-hamburguesa"></span>
+            <span class="linea-hamburguesa"></span>
+            <span class="linea-hamburguesa"></span>
+        </button>
+        <nav> 
+            <ul>
+                <li><a href="index.html">INICIO</a></li> 
+                <li><a href="perfil-cliente.html">MIS RESERVAS</a></li>
+                <li><a href="#" id="boton-cerrar-sesion-cliente">CERRAR SESIÓN</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="contenido-principal">
+        <section class="entrenamientos-preview">
+            <div class="titulo-entrenamientos">
+                <span style="color: white;">¡HOLA, ATLETA!</span>
+                <span style="font-size: 16px; color: gray;" id="fecha-actual">Mi Cuenta</span>
+            </div>
+            <article class="entrenamiento-contenedor" style="background-color: #111;">
+                <h2>ESTADO DE TU CUENTA</h2>
+                <p id="suscripcion-estado">Cargando estado de suscripción...</p>
+                <div style="margin-top: 15px; color: #ccc; font-size: 14px;">
+                    Vencimiento: <span id="suscripcion-vencimiento">--/--/----</span>
+                </div>
+            </article>
+            <article class="entrenamiento-contenedor" style="background-color: #111;">
+                <h2>SACAR UN TURNO</h2>
+                <p>Elegí la clase programada del día y reservá tu cupo antes de venir a entrenar.</p>
+                <a href="#" class="boton-enlace" style="margin-top: 15px;">Ver Agenda Disponibles ➔</a>
+            </article>
+            <article class="entrenamiento-contenedor" style="background-color: #111; flex: 100%;">
+                <h2>MIS PRÓXIMAS CLASES</h2>
+                <div id="lista-mis-reservas" style="color: white; margin-top: 10px;">
+                    <p style="color: gray;">No tenés reservas agendadas para esta semana.</p>
+                </div>
+            </article>
+        </section>
+    </main>
+    <footer class="pie-principal">
+        <address> 
+            <ul>
+                <li><a href="https://www.instagram.com/xs.training1"><img src="/imagenes/ig.png" alt="Logo Instagram"></a></li>
+                <li><a class="logo-wpp" href="https://wa.me/+5493515556666"><img src="/imagenes/ws.png" alt="Logo wpp"></a></li>
+            </ul>
+            <p>268 Córdoba, Canals</p>
+        </address>
+    </footer>
+<script type="module" src="./js/panel-usuario/dashboard.mjs"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css">
+    <title>Inscripcion</title>
+</head>
+<body>
+    <header class="cabecera-principal">
+        <a href = "index.html"><img src = "/imagenes/xslogo.jpg"></a>
+        <button class="menu-hamburguesa" aria-label="Menú principal" aria-expanded="false">
+            <span class="linea-hamburguesa"></span>
+            <span class="linea-hamburguesa"></span>
+            <span class="linea-hamburguesa"></span>
+        </button>
+        <nav> 
+            <ul>
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href ="entrenamientos.html">ENTRENAMIENTOS</a></li>
+                <li><a href="inscripcion.html">INSCRIPCIÓN</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+                <li><a href="acceso.html">ACCESO</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="contenido-principal">
+        <section class="inscripcion">
+            <form id="form-inscripcion-publico">
+    <h1>INSCRIPCIÓN</h1>
+    <div class="formulario-inscripcion">
+        <label for="text-nombre">NOMBRE <input type="text" name="nombre" id="text-nombre" required></label>
+        <label for="text-apellido">APELLIDO <input type="text" name="apellido" id="text-apellido" required></label>
+        <label for="text-dni">DNI <input type="text" name="dni" id="text-dni" required></label>
+        <label for="tel-numero">NÚMERO DE TELEFONO <input type="tel" name="numero" id="tel-numero" required></label>
+        <label for="email-correo">CORREO ELECTRONICO <input type="email" name="correo" id="email-correo" required></label>
+        <button type="submit" id="boton-enviar-inscripcion">INSCRIBIRSE</button>
+        <p id="mensaje-inscripcion" style="display: none; text-align: center; margin-top: 15px; font-family: 'textos'; font-weight: bold;"></p>
+    </div>
+</form>
+        </section>
+    </main>
+    <footer class="pie-principal">
+        <address> 
+            <ul>
+                <li><a href="https://www.instagram.com/xs.training1"><img src="/imagenes/ig.png" alt="Logo Instagram"></a></li>
+                <li><a class="logo-wpp" href="https://wa.me/+5493515556666"><img src="/imagenes/ws.png" alt="Logo wpp"></a></li>
+            </ul>
+            <p>268 Córdoba, Canals</p>
+        </address>
+    </footer>
+</body>
+<script type="module" src="/js/index.mjs"></script>
+</html>
