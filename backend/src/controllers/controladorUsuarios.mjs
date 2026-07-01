@@ -1,6 +1,7 @@
 import { UsuarioRepository } from '../repositories/dbUsuarios.mjs';
 import bcrypt from 'bcrypt';
-import { nanoid } from 'nanoid';
+
+import jwt from 'jsonwebtoken'; // => Importada la librería de JWT.
 
 const repo = new UsuarioRepository();
 
@@ -66,16 +67,26 @@ export class controladorUsuarios {
                     mensaje: 'Correo o contraseña incorrectos.'
                 });
             }
-            const sessionId = nanoid();
-            await repo.actualizarSesion(
-                usuario.id,
-                sessionId
-            );
-            res.cookie('session_id', sessionId, {
-                httpOnly: true,
-                sameSite: 'lax',
-                maxAge: 1000 * 60 * 60 * 24
+
+            const payload = {
+                id: usuario.id,
+                correo: usuario.correo,
+                idrol: usuario.idrol
+            };
+            console.log(process.env.FIRMA_JWT);
+            const token = jwt.sign(payload, process.env.FIRMA_JWT,{
+                expiresIn: '1h'
             });
+
+
+            res.cookie("token", token, {
+                httpOnly: true,
+                sameSite: "lax",
+                signed: true,
+                secure: false,
+                maxAge: 1000 * 60 * 60
+            });
+
             return res.json({
                 mensaje: 'Inicio de sesión exitoso.',
                 usuario: {
@@ -92,64 +103,42 @@ export class controladorUsuarios {
         }
     }
     async logout(req, res) {
-        try {
-            const sessionId = req.cookies.session_id;
-            if (!sessionId) {
-                return res.sendStatus(204);
-            }
-            const usuario = await repo.buscarPorSesion(sessionId);
-            if (usuario) {
-                await repo.eliminarSesion(usuario.id);
-            }
-            res.clearCookie('session_id');
+        try{
+            res.clearCookie("token");
             return res.json({
-                mensaje: 'Sesión cerrada correctamente.'
+                mensaje: 'Cierre de sesión exitoso.'
             });
-        } catch (error) {
+        } catch(error){
+            console.error(error);
+
+            return res.status(500).json({
+                mensaje: 'Error interno del servidor.'
+            })
+        }
+    }
+    async verificarSesion(req, res) {
+        try{
+            return res.json({
+                logueado: true,
+                usuario: {
+                    id: req.usuario.id,
+                    correo: req.usuario.correo,
+                    idorl: req.usuario.idrol
+                }
+            });
+        } catch(error){
             console.error(error);
             return res.status(500).json({
                 mensaje: 'Error interno del servidor.'
             });
         }
     }
-    async verificarSesion(req, res) {
-    try {
-        const sessionId = req.cookies.session_id;
-        if (!sessionId) {
-            return res.status(401).json({
-                logueado: false,
-                mensaje: 'No hay sesión iniciada.'
-            });
-        }
-        const usuario = await repo.buscarPorSesion(sessionId);
-        if (!usuario) {
-            return res.status(401).json({
-                logueado: false,
-                mensaje: 'Sesión inválida.'
-            });
-        }
-        return res.json({
-            logueado: true,
-            usuario: {
-                id: usuario.id,
-                correo: usuario.correo,
-                idrol: usuario.idrol
-            }
-        });
-    } catch (error) {
-        console.error(error);
-        return res.status(500).json({
-            mensaje: 'Error interno del servidor.'
-        });
-    }
-}
 }
 export async function verificarCookies(req, res, next) {
     const sessionId = req.cookies.session_id;
     if (!sessionId) {
         return res.redirect("/login");
     }
-    const usuario = await repo.buscarPorSesion(sessionId);
     if (!usuario) {
         res.clearCookie("session_id");
         return res.redirect("/login");

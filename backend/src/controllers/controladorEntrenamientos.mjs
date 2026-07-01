@@ -25,6 +25,7 @@ export class controladorEntrenamientos{
         }
     }
     async putEntrenamiento(req, res) {
+        console.log("Ingresando a putEntrenamiento"); 
         try {
             const { id } = req.params;
             const { nombre, descripcion, imagen } = req.body;

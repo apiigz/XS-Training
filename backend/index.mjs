@@ -22,7 +22,13 @@ const app = express();
 
 app.use(express.static(path.resolve('..', 'frontend')))
 app.use(express.json());
-app.use(cookieParser());
+app.use(cookieParser(process.env.FIRMA_COOKIE));
+
+app.get('/test-cookie', (req, res) => {
+  console.log(req.cookies);
+  console.log(req.signedCookies);
+  res.send('Cookie establecida');
+});
 
 app.use('/api', rutaEntrenamientos)
 app.use('/api', rutaTestimonios)
