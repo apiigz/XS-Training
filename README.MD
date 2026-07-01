@@ -26,3 +26,13 @@ SELECT * FROM usuario;
 8. Seleccionar "bcrypt" con la barra espaciadora y darle enter
 
 9. En el archivo ".env" de backend completar con los campos dados en el archivo .env.example.
+
+Usuarios:
+
+ROL de ADMIN
+
+"correo": testing@gmail.com // "password": 12345
+
+ROL de USUARIO
+
+"correo": agus@gmail.com // "password": 12345
